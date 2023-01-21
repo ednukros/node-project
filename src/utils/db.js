@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_URL = `mongodb+srv://inma-db-access:root@cluster0.eoh9zrg.mongodb.net/prueba?retryWrites=true&w=majority`
+const DB_URL = `mongodb+srv://inma-db-access:root@cluster0.eoh9zrg.mongodb.net/api-dragon-ball?retryWrites=true&w=majority`
 
 const connectDB = async () => {
 
