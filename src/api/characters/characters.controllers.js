@@ -56,12 +56,23 @@ const deleteCharacter = async (req, res, next) => {
     } catch (error) {
         return next(error);
     }
-}
+};
+
+const getByName = async (req, res, next) => {
+    try {
+        const { name } = req.params;
+        const found = await Character.findById(name);
+        return res.status(200).json(found);
+    } catch (error) {
+        return next(error);
+    }
+};
 
 
 module.exports = {
     indexGet, //read
     createPost, //Create
     editPut,//update
-    deleteCharacter //delete
+    deleteCharacter, //delete
+    getByName
 }
