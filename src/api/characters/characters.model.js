@@ -7,7 +7,7 @@ const characterSchema = new mongoose.Schema({
     },
     "height": {
         type: Number,
-      
+
     },
 
     "weight": {
@@ -16,7 +16,7 @@ const characterSchema = new mongoose.Schema({
 
     "gender": {
         type: [String],
-        enum:[
+        enum: [
             'male',
             'female'
         ]
@@ -45,13 +45,16 @@ const characterSchema = new mongoose.Schema({
         ]
 
     },
-    "temporarily-race":{
-        type: String,
+    "temporarily-race": {
+        type: String
     },
-   
+    "tournaments-won": {
 
-   
-   
+    }
+
+
+
+
 
 
 

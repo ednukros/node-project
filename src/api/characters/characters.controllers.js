@@ -3,7 +3,7 @@ const Character = require("./characters.model");
 const indexGet = async (req, res, next) => {
 
     try {
-        const characters = await Character.find();
+        const characters = await Character.find()
         return res.status(200).json(characters);
     } catch (error) {
         return next(error);

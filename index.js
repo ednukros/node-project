@@ -1,29 +1,32 @@
 // require('dotenv').config()
 const express = require('express');
-// const cors = require('cors');
-const  db = require('./src/utils/db.js');
+const cors = require('cors');
+const db = require('./src/utils/db.js');
 
- db.connectDB();
- 
+db.connectDB();
+
 //Routes imports here
-
 const indexRoutes = require("./src/api/index/index.routes");
 const charactersRoutes = require("./src/api/characters/characters.routes");
+const tournamentRoutes = require("./src/api/tournaments/tournaments.routes");
+const usersRoutes = require("./src/api/users/user.routes");
 
 const PORT = 8080;
 const server = express();
 
-//aqui vienen los uses
-
 //req.body transform
 server.use(express.json());
 
-server.use(express.urlencoded({ extended: true}));
+server.use(express.urlencoded({
+    extended: true
+}));
 
 
 //server routes here
 server.use("/", indexRoutes);
 server.use("/characters", charactersRoutes);
+server.use("/tournaments", tournamentRoutes);
+server.use("/users", usersRoutes);
 
 
 // non-existent routes will pass by this way

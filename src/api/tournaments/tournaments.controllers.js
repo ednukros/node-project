@@ -4,7 +4,7 @@ const Tournament = require("./tournaments.model");
 const indexGet = async (req, res, next) => {
 
     try {
-        const tournaments = await Tournament.find();
+        const tournaments = await Tournament.find().populate('winner');
         return res.status(200).json(tournaments);
     } catch (error) {
         return next(error);
